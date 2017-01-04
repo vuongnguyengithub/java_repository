@@ -1,0 +1,50 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<h:form>
+		<div>
+			<p:outputLabel value="Name"></p:outputLabel>
+			<p:inputText value="#{productBean.product.name}"></p:inputText>
+		</div>
+		<div>
+			<p:outputLabel value="Price"></p:outputLabel>
+			<p:inputText value="#{productBean.product.price}"></p:inputText>
+		</div>
+		<div>
+			<p:outputLabel value="Unit"></p:outputLabel>
+			<p:inputText value="#{productBean.product.unit}"></p:inputText>
+		</div>
+		<div>
+			<p:outputLabel value="Description"></p:outputLabel>
+			<p:inputText value="#{productBean.product.description}"></p:inputText>
+		</div>
+		
+	</h:form>
+	<h:form id="form2">
+		<p:dataTable value="#{productBean.products}" var="product">
+			<p:column headerText="Name">
+				<h:outputText value="#{product.name}"></h:outputText>
+			</p:column>
+			<p:column headerText="Price">
+				<h:outputText value="#{product.price}"></h:outputText>
+			</p:column>
+			<p:column headerText="Unit">
+				<h:outputText value="#{product.unit}"></h:outputText>
+			</p:column>
+			<p:column headerText="Description">
+				<h:outputText value="#{product.description}"></h:outputText>
+			</p:column>
+		</p:dataTable>
+	</h:form>
+	
+	<h:form>
+	<h:outputText value="#{weatherBean.countries}"></h:outputText>
+	</h:form>
+</h:body>
+</html>
